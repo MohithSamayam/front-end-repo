@@ -2,11 +2,16 @@ import styled from "styled-components";
 import { BASE_URL, Button, Container } from "../App.jsx"; 
 //import { BASE_URL, Button, Container } from "../App.jsx";
  //import { BASE_URL, Button, Container } from "../../App";
+ 
 const SearchResult = ({ data }) => {
   return (
     <FoodCardContainer>
+      <section>
+
+      <h2 className="">Menu</h2>
+      </section>
       <Container>
-        <FoodCards>
+        <FoodCards>  
           {data?.map(({ name, image, text, price }) => (
             <FoodCard key={name}>
               <div className="food_image">
@@ -30,9 +35,19 @@ const SearchResult = ({ data }) => {
 export default SearchResult;
 const FoodCardContainer = styled.section`
   min-height: calc(100vh - 210px);
-  background-image: url("/bg.png");
+  background-image: url("/background_image.jpg");
   background-size: cover;
+
+  section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+  h2{
+    font-size: 40px;
+  }
 `;
+
 const FoodCards = styled.div`
   display: flex;
   flex-wrap: wrap;

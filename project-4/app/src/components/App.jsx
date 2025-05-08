@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import SearchResult from "./SearchResults/SearchResult.jsx"; // Add `.jsx`
+import Navbar from "./Nav.jsx";
+import Footer from "./Footer.jsx";
+import ContactUs from "./ContactUs.jsx";
+import AboutUs from "./AboutUs.jsx";
 //import SearchResult from "./SearchResults/SearchResult"; // ✅ Correct path
 // import SearchResult from "./components/SearchResults/SearchResult";
+
 
 export const BASE_URL = "http://localhost:9000";
 
@@ -88,16 +93,17 @@ const App = () => {
     <>
       <Container>
         <TopContainer>
-          <div className="logo">
-            <img src="/logo.svg" alt="logo" />
-          </div>
-
+          {/* <div className="logo">
+            <img src="/Los.svg" alt="logo" />
+          </div> */}
+      <Navbar />
           <div className="search">
             <input onChange={searchFood} placeholder="Search Food" />
           </div>
         </TopContainer>
 
         <FilterContainer>
+          
           {filterBtns.map((value) => (
             <Button
               isSelected={selectedBtn === value.type}
@@ -110,6 +116,9 @@ const App = () => {
         </FilterContainer>
       </Container>
       <SearchResult data={filteredData} />
+      <AboutUs />
+      <ContactUs />
+      <Footer />
     </>
   );
 };
@@ -126,6 +135,8 @@ const TopContainer = styled.section`
   justify-content: space-between;
   padding: 16px;
   align-items: center;
+  background-color: #343434;
+
 
   .search {
     input {

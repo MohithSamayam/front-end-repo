@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./components/App.jsx"; // Correct path
+import App from "./components/App"; // Correct path
 // import App from "./App.jsx";
 import { createGlobalStyle } from "styled-components";
 
@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
     padding:0;
   }
   body{
-    background-color: #323334;
+    background-color: 	#343434;
     color:white;
     min-height: 100vh;
     font-family:  'Inter', sans-serif;
